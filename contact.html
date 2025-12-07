@@ -11,20 +11,39 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
   <header class="site-header py-3">
     <section class="container d-flex align-items-center justify-content-between">
+
       <a href="index.html" class="brand d-flex align-items-center">
         <img src="assets/logo1.png" alt="Logo" width="48" height="48" class="me-2">
       </a>
 
-      <nav>
+      <button class="nav-toggle" id="navToggle">☰</button>
+
+      <nav class="nav-wrapper" id="navWrapper">
         <ul class="nav">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="portofolio.html">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="portfolio.html" id="portfolioDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Portfolio
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="portfolioDropdown">
+              <li><a class="dropdown-item" href="naam.html">Portfolio 1</a></li>
+              <li><a class="dropdown-item" href="naam2.html">Portfolio 2</a></li>
+              <li><a class="dropdown-item" href="naam3.html">Portfolio 3</a></li>
+              <li><a class="dropdown-item" href="naam4.html">Portfolio 4</a></li>
+              <li><a class="dropdown-item" href="naam5.html">Portfolio 5</a></li>
+              <li><a class="dropdown-item" href="naam6.html">Portfolio 6</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
         </ul>
       </nav>
+
     </section>
   </header>
 
@@ -33,7 +52,10 @@
 
     <section class="row">
       <article class="col-lg-7">
-        <form class="contact-form" action="#" method="post" novalidate>
+        
+        <form name="contact" method="POST" data-netlify="true" action="/thank-you.html" class="contact-form" novalidate>
+
+          <input type="hidden" name="form-name" value="contact">
 
           <section class="mb-3">
             <label for="name" class="form-label">Naam</label>
@@ -70,7 +92,7 @@
           <p><strong>Telefoon</strong><br>+32467692746</p>
 
           <p><strong>Social</strong><br>
-            <a href="https://www.instagram.com/it_manzero?igsh=andhYWFqZGh4ZzJ5" target="_blank">Instagram</a> •
+            <a href="https://www.instagram.com/it_manzero" target="_blank">Instagram</a> •
             <a href="https://www.linkedin.com/in/mohamed-changhaf-a826aa258" target="_blank">LinkedIn</a>
           </p>
         </section>
@@ -78,17 +100,18 @@
     </section>
   </main>
 
-  <footer class="site-footer py-4 bg-light">
+  <footer class="site-footer py-4">
     <section class="container text-center">
       <a href="contact.html" class="me-3">Contact</a>
 
       <section class="social-links mt-2">
-        <a href="https://www.instagram.com/it_manzero?igsh=andhYWFqZGh4ZzJ5" target="_blank" class="me-2">Instagram</a> •
+        <a href="https://www.instagram.com/it_manzero" target="_blank" class="me-2">Instagram</a> •
         <a href="https://www.linkedin.com/in/mohamed-changhaf-a826aa258" target="_blank">LinkedIn</a>
       </section>
     </section>
   </footer>
 
+  <script src="js/nav.js"></script>
 </body>
 </html>
 
